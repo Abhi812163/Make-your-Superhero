@@ -21,14 +21,121 @@ function player_update(){
 
 function image_update(get_image){
     fabric.Image.fromURL(get_image,function(Img){
-        image_object=Img;
+        new_image=Img;
 
-        image_object.scaleToWidth(block_image_width);
-        image_object.scaleToHeight(block_image_height);
-        _image_object.set({
+        new_image.scaleToWidth(block_image_width);
+        new_image.scaleToHeight(block_image_height);
+        new_image.set({
             top:player_y,
             left:player_x
         });
-        canvas.add(image_object);
+        canvas.add(new_image);
     });
 }
+
+window.addEventListener("keydown",my_keydown);
+function my_keydown(e){
+    keypressed=e.keyCode;
+    console.log(keypressed);
+    if(e.shiftKey==true && keypressed=='80'){
+        console.log("Shift and P have been pressed");
+        block_image_width=block_image_width+10;
+        block_image_height=block_image_height+10;
+        document.getElementById("current_width").innerHTML=block_image_width;
+        document.getElementById("current_height").innerHTML=block_image_height;
+    }
+    if(e.shiftKey==true && keypressed=='80'){
+        console.log("Shift and M have been pressed");
+        block_image_width=block_image_width-10;
+        block_image_height=block_image_height-10;
+        document.getElementById("current_width").innerHTML=block_image_width;
+        document.getElementById("current_height").innerHTML=block_image_height;
+    }
+    if(keypressed=='65'){
+        new_image('captain_america_face.png');
+        console.log("A");
+    }
+    if(keypressed=='66'){
+        new_image('Final_output.png');
+        console.log("B");
+    }
+    if(keypressed=='67'){
+        new_image('hulk_face.png');
+        console.log("C");
+    }
+    if(keypressed=='68'){
+        new_image('hulk_left_hand.png');
+        console.log("D");
+    }
+    if(keypressed=='69'){
+        new_image('hulk_legs.png');
+        console.log("E");
+    }
+    if(keypressed=='70'){
+        new_image('hulk_legs.png');
+        console.log("F");
+    }
+    if(keypressed=='71'){
+        new_image('hulk_right_hand.png');
+        console.log("G");
+    }
+    if(keypressed=='72'){
+        new_image('hulkd_body.png');
+        console.log("H");
+    }
+    if(keypressed=='73'){
+        new_image('ironman_body.png');
+        console.log("I");
+    }
+    if(keypressed=='74'){
+        new_image('ironman_face.png');
+        console.log("J");
+    }
+    if(keypressed=='75'){
+        new_image('ironman_left_hand.png');
+        console.log("K");
+    }
+    if(keypressed=='76'){
+        new_image('ironman_legs.png');
+        console.log("L");
+    }
+    if(keypressed=='77'){
+        new_image('ironman_right_hand.png');
+        console.log("M");
+    }
+    if(keypressed=='78'){
+        new_image('player.png');
+        console.log("N");
+    }
+    if(keypressed=='79'){
+        new_image('spiderman_body.png');
+        console.log("O");
+    }
+    if(keypressed=='80'){
+        new_image('spiderman_face.png');
+        console.log("P");
+    }
+    if(keypressed=='81'){
+        new_image('spiderman_left_hand.png');
+        console.log("Q");
+    }
+    if(keypressed=='82'){
+        new_image('spiderman_legs.png');
+        console.log("R");
+    }
+    if(keypressed=='83'){
+        new_image('spiderman_right_hand.png');
+        console.log("S");
+    }
+    if(keypressed=='84'){
+        new_image('thor_face.png');
+        console.log("T");
+    }
+    if(keypressed=='85'){
+        new_image('thor_left_hand.png');
+        console.log("U");
+    }
+    if(keypressed=='86'){
+        new_image('thor_right_hand.png');
+        console.log("V");
+    }
